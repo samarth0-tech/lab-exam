@@ -1,11 +1,9 @@
 package com.exam;
 
 public class LabUtils {
-    public static int sumArray(int[] arr) {
-        int sum = 0;
-        for (int val : arr) {
-            sum += val;
-        }
-        return sum;
+    
+    // Method to calculate simple interest
+    public static double calculateSimpleInterest(double principal, double rate, double time) {
+        return (principal * rate * time) / 100.0;
     }
 }
