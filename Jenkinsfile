@@ -1,21 +1,22 @@
 pipeline {
     agent any
-
+    
     tools {
-        maven 'Maven3' // This name must match exactly what you typed in Jenkins
+        maven 'M3' 
     }
-
+    
     stages {
         stage('Build & Test') {
             steps {
-                sh 'mvn clean test'
+                bat 'mvn clean test' 
             }
         }
     }
-
+    
     post {
         always {
-            junit 'target/surefire-reports/*.xml'
+            // This line automatically captures and displays test cases in Jenkins
+            junit 'target/surefire-reports/*.xml' 
         }
     }
 }
